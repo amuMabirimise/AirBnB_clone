@@ -27,19 +27,14 @@ class BaseModel:
         else:
             kwargs['created_at'] = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
             kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
-            for i, j in kwargs.items():
-                if "__class__" not in i:
-                    setattr(self, i, j)
+            for a, b in kwargs.items():
+                if "__class__" not in a:
+                    setattr(self, a, b)
 
     def __str__(self):
         """String repr of the Base Model Class"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
     
-    def save(self):
-        from models import storage
-        self.updated_at = datetime.now()
-        storage.save()
-
     def to_dict(self):
         """
             Returns a dictionary containing all
@@ -50,3 +45,8 @@ class BaseModel:
         bModelDict['created_at'] = self.created_at.isoformat()
         bModelDict['updated_at'] = self.updated_at.isoformat()
         return bModelDict
+
+     def save(self):
+        from models import storage
+        self.updated_at = datetime.now()
+        storage.save()
