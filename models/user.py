@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 
 from models.base_model import BaseModel
 "import the BaseModel to User"
@@ -23,17 +22,7 @@ class User(BaseModel):
     Methods:
         The User class inherits common methods from BaseModel.
     """
-=======
-'''
-A Python script for the User class.
-'''
-from models.base_model import BaseModel
 
-class User(BaseModel):
-    '''
-    State class representing a state with a 'name' attribute.
-    '''
->>>>>>> 26a25b5aa166a2ca01786455f4eaa86b663a08c7
     email = ""
     password = ""
     first_name = ""
