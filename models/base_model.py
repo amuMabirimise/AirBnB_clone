@@ -3,7 +3,6 @@
 BaseModel class defining common attributes and methods
 """
 from datetime import datetime
-#from models import storage
 import uuid
 
 
@@ -45,13 +44,3 @@ class BaseModel:
         bModelDict['created_at'] = self.created_at.isoformat()
         bModelDict['updated_at'] = self.updated_at.isoformat()
         return bModelDict
-
-    def save(self):
-        """
-        Update 'updated_at' and save the instance.
-
-        """
-        from models import storage
-
-        self.updated_at = datetime.now()
-        storage.save()
