@@ -7,7 +7,8 @@ from models.base_model import BaseModel
 
 class Review(BaseModel):
     """
-    Review class that inherits from BaseModel and represents user reviews for places.
+    Review class that inherits from BaseModel.
+    represents user reviews for places.
 
     Attributes:
     place_id (str): The ID of the place associated with the review.
