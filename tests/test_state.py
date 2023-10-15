@@ -1,3 +1,10 @@
+"""Test case for State class in the base_model"""
+import unittest
+import models
+from models.state import State
+from models import BaseModel
+
+
 class TestState(unittest.TestCase):
     """Test case for the State class"""
 

@@ -1,3 +1,10 @@
+"""Test case user for Review Class in base_model"""
+import models
+import unittest
+from models.review import Review
+from models.base_model import BaseModel
+
+
 class TestReview(unittest.TestCase):
     """Test case for the Review class"""
 

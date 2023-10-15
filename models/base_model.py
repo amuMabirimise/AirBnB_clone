@@ -1,12 +1,19 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 '''
 This is a base model that defines all common attributes and methods of other classes
 '''
+=======
+"""
+BaseModel class defining common attributes and methods
+"""
+>>>>>>> 29b57553be073c535d074890dd0479434db3d083
 from datetime import datetime
 import uuid
 
 
 class BaseModel:
+<<<<<<< HEAD
     '''
     Represents the base model class of AirBnB console
     '''
@@ -15,6 +22,18 @@ class BaseModel:
         '''
         Constructor
         '''
+=======
+    """
+    BaseModel for the AirBnB console
+
+    """
+
+    def __init__(self, *args, **kwargs):
+        """
+        constructor indicators
+        """
+
+>>>>>>> 29b57553be073c535d074890dd0479434db3d083
         from models import storage
         if not kwargs:
             self.id = str(uuid.uuid4())
@@ -36,6 +55,7 @@ class BaseModel:
 
     def to_dict(self):
         """
+<<<<<<< HEAD
         Returns a dictionary containing all keys/values of __dict__ of the instance
         """
         Dict = dict(self.__dict__)
@@ -44,3 +64,22 @@ class BaseModel:
         Dict['updated_at'] = self.updated_at.isoformat()
         return Dict
 
+=======
+            Return a dictionary with instance attributes and metadata.
+        """
+        bModelDict = dict(self.__dict__)
+        bModelDict['__class__'] = type(self).__name__
+        bModelDict['created_at'] = self.created_at.isoformat()
+        bModelDict['updated_at'] = self.updated_at.isoformat()
+        return bModelDict
+
+    def save(self):
+        """
+        Update 'updated_at' and save the instance.
+
+        """
+        from models import storage
+
+        self.updated_at = datetime.now()
+        storage.save()
+>>>>>>> 29b57553be073c535d074890dd0479434db3d083

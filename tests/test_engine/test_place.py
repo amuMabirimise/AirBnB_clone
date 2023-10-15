@@ -1,23 +1,23 @@
-"""Test case user for Place Class in base_model"""
-import models
+#!/usr/bin/env python3
+"""Unit tests for the Place class in the models module"""
+
 import unittest
 from models.place import Place
 from models import BaseModel
-
 
 class TestPlace(unittest.TestCase):
     """Test case for the Place class"""
 
     def test_inheritance(self):
-        """Test if Place class inherits from BaseModel"""
+        """Test if Place inherits from BaseModel"""
         place = Place()
         self.assertIsInstance(place, BaseModel)
         self.assertTrue(hasattr(place, "id"))
         self.assertTrue(hasattr(place, "created_at"))
         self.assertTrue(hasattr(place, "updated_at"))
 
-    def test_attributes(self):
-        """Test if Place class attributes are created"""
+    def test_attribute_creation(self):
+        """Test if attributes are created in Place class"""
         place = Place()
         self.assertTrue(hasattr(place, "city_id"))
         self.assertTrue(hasattr(place, "user_id"))
@@ -31,8 +31,8 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(place, "longitude"))
         self.assertTrue(hasattr(place, "amenity_ids"))
 
-    def test_attr_values(self):
-        """Test if Place class attributes have correct default values"""
+    def test_attribute_values(self):
+        """Test if attributes have the correct default values"""
         place = Place()
         self.assertEqual(place.city_id, "")
         self.assertEqual(place.user_id, "")
@@ -46,8 +46,8 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(place.price_by_night, 0)
         self.assertEqual(place.amenity_ids, [])
 
-    def test_attr_type(self):
-        """Test the data types of Place class attributes"""
+    def test_attribute_types(self):
+        """Test the data types of attributes in Place class"""
         place = Place()
         self.assertTrue(type(place.city_id) == str)
         self.assertTrue(type(place.user_id) == str)

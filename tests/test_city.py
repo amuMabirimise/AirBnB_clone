@@ -1,3 +1,9 @@
+"""Test case user for City Model"""
+import unittest
+from models.city import City
+from models import BaseModel
+
+
 class TestCity(unittest.TestCase):
     """Test case for the City class"""
 

@@ -1,10 +1,3 @@
-"""Test case user for Amenity Module in base_model"""
-import unittest
-from models.amenity import Amenity
-import models.amenity
-from models.base_model import BaseModel
-
-
 class TestAmenity(unittest.TestCase):
     """Test suite for the Amenity class"""
 
