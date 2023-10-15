@@ -14,30 +14,30 @@ import models.engine
 import models.engine.file_storage
 
 class TestFileStorage(unittest.TestCase):
-    """Test cases for the FileStorage class"""
+    """Unit tests for the file storage methods"""
 
     def test_attr(self):
-        """Test if the FileStorage class attributes are properly created"""
+        """Test the proper initialization of attributes in the FileStorage class"""
         file_store = FileStorage()
         self.assertIsInstance(file_store, FileStorage)
         self.assertTrue(hasattr(file_store, "__file_path"))
         self.assertTrue(hasattr(file_store, "__objects")
 
     def test_attr_type(self):
-        """Test the types of FileStorage class attributes"""
+        """Verify the data types of attributes in the FileStorage class"""
         file_store = FileStorage()
         self.assertEqual(file_store.__file_path, "file.json")
         self.assertTrue(type(file_store.__objects) == dict)
 
     def test_all(self):
-        """Test the 'all' method of the FileStorage class"""
+        """Evaluate the 'all' method functionality in the FileStorage class"""
         file_store = FileStorage()
         all_instance = file_store.all()
         self.assertIsInstance(all_instance, dict)
         self.assertIs(all_instance, file_store.__objects)
 
     def test_new(self):
-        """Test the 'new' method of the FileStorage class"""
+        """Examine the functionality of the 'new' method in the FileStorage class"""
         file_store = FileStorage()
         base_model = BaseModel()
         file_store.new(base_model)
