@@ -46,7 +46,11 @@ class BaseModel:
         bModelDict['updated_at'] = self.updated_at.isoformat()
         return bModelDict
 
-     def save(self):
-        from models import storage
-        self.updated_at = datetime.now()
-        storage.save()
+
+    # def save(self):
+         #"updates the time in storage"
+
+        #from models import storage
+
+        #self.updated_at = datetime.now()
+        #storage.save()
