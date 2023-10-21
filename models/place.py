@@ -7,12 +7,16 @@ from models.base_model import BaseModel
 
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     '''
-    Place class inherits from the BaseModel and represents a rental property.
+    Place class inherits from the BaseModel.
+    Represents a rental property.
     It includes attributes such as city_id, user_id, name, 
-    description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, and longitude.
-    Additionally, it has a list of amenity_ids to store amenities associated with the place.
+    description, number_rooms, number_bathrooms
+    max_guest, price_by_night, latitude, and longitude.
+    Additionally, it has a list of amenity_ids.
+    Store amenities associated with the place.
     '''
 
     city_id = ""

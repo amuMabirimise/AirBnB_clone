@@ -28,9 +28,9 @@ class FileStorage:
         
     def new(self, obj):
         """sets in __objects the obj
-        with key <obj class name>.id"""
-        
-        #key = obj.to_dict()['__class__'] + "." + obj.id
+        with key <obj class name>.id
+        """
+
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
     
@@ -55,10 +55,6 @@ class FileStorage:
             with open(self.__file_path, "r") as read_file:
                 data = json.load(read_file)
                 for key, value in data.items():
-                    #if key not in self.__objects:
-                     #   if value['__class__'] == 'User':
                     self.__objects[key] = BaseModel(**value)
-                    #self.new(eval(key.split(".")[0])(**value))  
         except (FileNotFoundError, json.JSONDecodeError, TypeError):
-            # Handle file not found, JSON decoding error, or unexpected value types
             pass
