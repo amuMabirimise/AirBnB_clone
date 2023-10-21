@@ -1,0 +1,17 @@
+header {
+    background-color: #484848;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+header img {
+    margin-right: 20px;
+}
+
+header img, header h1 {
+    color: white;
+}
